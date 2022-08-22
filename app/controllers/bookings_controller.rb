@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  befocre_action :set_car, only: [:new, :create]
+  before_action :set_car, only: [:new, :create]
 
   def new
     @booking = Booking.new
@@ -28,6 +28,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_rent, :ent_rent, :user_id, :car_id)
+    params.require(:booking).permit(:start_rent, :end_rent, :user_id, :car_id)
   end
 end
