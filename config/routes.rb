@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  get 'cars/index'
-  get 'cars/show'
+  # Read all
+  get 'cars', to: 'cars#index'
+
   get 'cars/new'
+
+  # Read one - The `show` route needs to be *after* `new` route.
+  get 'cars/:id', to: "cars#show", as: :car
+
   get 'cars/create'
   get 'cars/update'
   get 'cars/destroy'
