@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'cars/show'
   get 'cars/new'
   get 'cars/create'
-  get 'cars/update'
+  get 'cars/:id/edit', to: "cars#edit"
+  patch 'cars/:id', to: 'cars#update'
   get 'cars/destroy'
   devise_for :users
   root to: "pages#home"
