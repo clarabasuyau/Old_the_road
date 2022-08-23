@@ -1,3 +1,29 @@
-<h1>index </h1>
+<h1 class= "text-center mt-4">Our selection </h1>
 
-<%= link_to "Car", car_path(car) %>
+<div class="container">
+  <div class="row row-cols-3">
+    <% @cars.each do |car|%>
+    <div class="col my-4">
+      <div class="card-trip">
+        <img src="https://source.unsplash.com/N9Pf2J656aQ" class="card-img-top" alt="car">
+        <div class="card-trip-infos">
+          <div class="card-trip-infos-top">
+            <h2>Card title</h2>
+            <div>
+              <ul>
+                <li><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i></li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+          <a href="<%= car_path(car.id) %>" class="btn btn-primary w-100 mt-3">Rent for <strong>100€</strong>/day</a>
+        </div>
+
+
+      </div>
+    </div>
+    <% end%>
+  </div>
+</div>
