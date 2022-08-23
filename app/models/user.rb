@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :cars, through: :bookings, dependent: :destroy
   has_many :cars, through: :reviews, dependent: :destroy
-  validates :name, :phone_number, :email, presence: true
+  validates :name, :phone_number, presence: true
 end
