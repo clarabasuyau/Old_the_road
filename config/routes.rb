@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dashboards/dashboard'
   # Read all
   # get 'cars', to: 'cars#index'
   # get '/cars/new', to: 'cars#new'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "pages#home"
+  get 'dashboards', to: 'dashboards#dashboard'
   resources :cars, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
   end
