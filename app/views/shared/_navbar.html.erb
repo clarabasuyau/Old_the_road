@@ -9,22 +9,19 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Subscribe</a>
+        <li class="nav-item">
+          <%= link_to "Rent your car", cars_path %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Connexion</a>
+          <%=  link_to "Log In", new_user_session_path %>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Rent your car</a>
-        </li>
-        <li class="nav-item dropdown">
+        <%# <li class="nav-item dropdown">
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
           </div>
-        </li>
+        </li> %>
       </ul>
     </div>
   </div>
