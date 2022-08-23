@@ -1,4 +1,4 @@
-<h1 class= "text-center mt-4">Our selection </h1>
+<h1 class= "text-center mt-4 "><strong>Choose your dream car !</strong></h1>
 
 <div class="container">
   <div class="row row-cols-3">
@@ -8,7 +8,7 @@
         <img src="https://source.unsplash.com/N9Pf2J656aQ" class="card-img-top" alt="car">
         <div class="card-trip-infos">
           <div class="card-trip-infos-top">
-            <h2>Card title</h2>
+            <h2><%=car.brand_name + ' ' + car.model%></h2>
             <div>
               <ul>
                 <li><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i></li>
@@ -16,9 +16,9 @@
             </div>
           </div>
 
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text text-ellipsis--2"> <%=car.overview%></p>
 
-          <a href="<%= car_path(car.id) %>" class="btn btn-primary w-100 mt-3">Rent for <strong>100€</strong>/day</a>
+          <a href="<%= car_path(car.id) %>" class="btn btn-primary w-100 mt-3">Rent for <strong><%=car.price%>€</strong>/day</a>
         </div>
 
 
