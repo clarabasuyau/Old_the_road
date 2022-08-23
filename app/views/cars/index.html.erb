@@ -16,7 +16,8 @@
     <% @cars.each do |car|%>
     <div class="col my-4">
       <div class="card-trip">
-        <img src="https://source.unsplash.com/N9Pf2J656aQ" class="card-img-top" alt="car">
+        <img src="<%= car.picture %>" class="card-img-top" alt="car">
+        <%# <%= image_tag car.picture %>
         <div class="card-trip-infos">
           <div class="card-trip-infos-top">
             <h2><%=car.brand_name + ' ' + car.model%></h2>
