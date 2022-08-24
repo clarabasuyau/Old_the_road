@@ -1,4 +1,4 @@
-<div class="container">
+<div >
   <div class="row">
     <div class="col-4">
       <div class="d-flex">
@@ -7,19 +7,125 @@
 
 
       </div>
-      <h2>vos voitures</h2>
-      <% current_user.cars.each do |car| %>
-        <div class=“card-product”>
+      <div>
+        <h2>vos voitures</h2>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2>Product name</h2>
+              <p>Product description with <strong>relevant info</strong> only.</p>
+            </div>
+          </div>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2>Product name</h2>
+              <p>Product description with <strong>relevant info</strong> only.</p>
+            </div>
+          </div>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <div class="card-product-infos">
+              <h2>Product name</h2>
+              <p>Product description with <strong>relevant info</strong> only.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-4">
+      <div>
+          <h2>vos voitures</h2>
+            <div class="card-product">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <div class="card-product-infos">
+                <h2>Product name</h2>
+                <p>Product description with <strong>relevant info</strong> only.</p>
+              </div>
+            </div>
+            <div class="card-product">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <div class="card-product-infos">
+                <h2>Product name</h2>
+                <p>Product description with <strong>relevant info</strong> only.</p>
+              </div>
+            </div>
+            <div class="card-product">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <div class="card-product-infos">
+                <h2>Product name</h2>
+                <p>Product description with <strong>relevant info</strong> only.</p>
+              </div>
+            </div>
+             <div class="card-product">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <div class="card-product-infos">
+                <h2>grisé</h2>
+                <p>Product description with <strong>relevant info</strong> only.</p>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4" >
+      <div class="notification">
+        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" />
+        <div class="notification-content" style= 'font-size:12px'>
+          <p><small>14th January</small></p>
+          <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+        </div>
+
+        <div class="notification-actions">
+          <a href="#"><i class="fas fa-pencil-alt"></i></a>
+          <a href="#"><i class="far fa-trash-alt"></i></a>
+        </div>
+      </div>
+
+      <div class="notification">
+        <div>
+            <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-bordered"/>
+            <div class="notification-content" style= 'font-size:14px'>
+              <p><small>9th January</small></p>
+              <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+            </div>
+
+            <div class="notification-actions">
+              <a href="#"><i class="fas fa-pencil-alt"></i></a>
+              <a href="#"><i class="far fa-trash-alt"></i></a>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+      <%#= current_user.cars.each do |car| %>
+        <%# <div class=“card-product”>
+          <%# <div class=container> %>
+            <%# <img src=“https://images.unsplash.com/photo-1494905998402-395d579af36f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1NjQ3MjQxNA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080”/>
+            <div class=“card-product-infos”>
+              <h2>Nom de voiture</h2>
+              <p>model+ seats+ <strong>prix€</strong></p>
+            </div> %>
+            <%# <img src=“https://images.unsplash.com/photo-1494905998402-395d579af36f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1NjQ3MjQxNA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080”/>
+            <div class=“card-product-infos”>
+              <h2>Current Bookings</h2>
+              <%# <p>Your bokking <strong>relevant info</strong> only.</p> %>
+            <%# </div>
+          </div>
+        </div>
+
+         <div class=“card-product”>
+        </div> %>
+
+         <%# <div class=“card-product”>
           <img src=“https://images.unsplash.com/photo-1494905998402-395d579af36f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1NjQ3MjQxNA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080”/>
           <div class=“card-product-infos”>
             <h2>Current Bookings</h2>
             <p>Your bokking <strong>relevant info</strong> only.</p>
           </div>
         </div>
-
       <% end %>
-    </div>
-    <div class="col-4"></div>
-    <div class="col-4"></div>
-  </div>
-</div>
+    <%# </div>  %>

@@ -13,6 +13,8 @@ user1 = User.create(
 user1.save!
 
 puts 'Creating 15 fake cars...'
+
+cars = []
 15.times do
   car = Car.create!(
     brand_name: Faker::Vehicle.manufacture,
@@ -24,5 +26,6 @@ puts 'Creating 15 fake cars...'
     user: user1
   )
   car.save!
+  cars << car
 end
 puts 'Finished!'
