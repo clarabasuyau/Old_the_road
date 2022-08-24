@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-sm-8">
 
@@ -18,15 +18,16 @@
         <%# <%= image_tag car.picture %>
       </div>
 
-      <div class="card-trip-infos">
-        <p class="card-text"> <%=@car.overview%></p>
+      <div class="card-trip-infos mt-3">
+        <p class="card-text text-muted"> <%=@car.overview%></p>
+        <%# <p class="card-text text-justify"> Hello hjhfffdsfjlsdzfhldflhdfhludfgjusdfglflgfdlhlfdhlhfdlhfdslhdslhsflhfdslhjfdlhjfdsljfdljfsdjfdfdjh</p> %>
         <div>
-          <p><%=link_to "Back to the list", cars_path %></p>
+          <a href="<%= cars_path %>" >Back to the cars</a>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-sm-4 mt-5">
       <h2><%= @car.price %> € / per day </h2>
       <%= simple_form_for [@car, @booking] do |f| %>
       <div class="form-inputs">
@@ -34,7 +35,7 @@
         <%= f.input :end_rent, as: :date %>
       </div>
       <div class="form-actions">
-        <%= f.button :submit, "Book", class: "btn btn-dark w-100 rounded"%>
+        <%= f.button :submit, "Book", class: "btn btn-dark w-100 rounded bg-warning border-0 mt-2"%>
       </div>
       <% end %>
     </div>

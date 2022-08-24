@@ -27,8 +27,16 @@
   padding: 16px;
 }
 
+.card-trip-infos a:hover {
+  color: #E67E23;
+}
+
+.card-trip-infos a {
+  color: black;
+}
+
 .card-trip .card-trip-infos .btn{
-  background-color: #d08b37;
+  background-color: #E67E23;
   border: none;
 }
 
