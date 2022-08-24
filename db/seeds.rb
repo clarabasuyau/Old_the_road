@@ -6,7 +6,6 @@ require 'faker'
 require "open-uri"
 require "nokogiri"
 
-
 # Scrapping start -----------------------------
 
 # img = []
@@ -22,7 +21,6 @@ require "nokogiri"
 # end
 
 # Scrapping end -------------------------------
-
 
 img = []
 i = 0
@@ -42,7 +40,6 @@ end
 # puts doc.search(".figure.image-figure-image img src").to_a
 # puts doc.search(".figure.image-figure-image img").attr('src')
 # puts img
-
 
 Booking.destroy_all
 Car.destroy_all
