@@ -1,16 +1,17 @@
 class BookingsController < ApplicationController
   before_action :set_car, only: [:new, :create]
 
-
   def new
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.car = @car
+    @booking.car = Car.find(params[:car_id])
+    @booking.user = current_user
     if @booking.save
-      redirect_to root_path
+      flash.alert = "Your booking ok"
+      redirect_to dashboards_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,8 +30,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_rent, :ent_rent, :user_id, :car_id)
-
-
+    params.require(:booking).permit(:start_rent, :end_rent, :user_id, :car_id)
   end
 end
