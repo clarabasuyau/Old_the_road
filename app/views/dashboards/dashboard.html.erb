@@ -1,32 +1,32 @@
-<div >
-  <div class="row">
-    <div class="col-4">
-      <div class="d-flex">
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="rounded-circle" width=40>
-        <h2>hello <%= current_user.name %></h2>
+<div class="container" >
+  <div class="row my-5">
+      <div class="d-flex justify-content-top pb-5 align-items-center">
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="rounded-circle" width=60>
+        <h2 class="ps-3">👋🏼  Hello <%= current_user.name %></h2>
 
 
       </div>
+    <div class="col-4">
       <div>
-        <h2>vos voitures</h2>
+        <h2>Vos voitures</h2>
           <div class="card-product">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-product-infos">
-              <h2>Product name</h2>
+              <h2>Car 1</h2>
               <p>Product description with <strong>relevant info</strong> only.</p>
             </div>
           </div>
           <div class="card-product">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-product-infos">
-              <h2>Product name</h2>
+              <h2>Car 2</h2>
               <p>Product description with <strong>relevant info</strong> only.</p>
             </div>
           </div>
           <div class="card-product">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-product-infos">
-              <h2>Product name</h2>
+              <h2>Car 3</h2>
               <p>Product description with <strong>relevant info</strong> only.</p>
             </div>
           </div>
@@ -35,34 +35,37 @@
 
 
 
-    <div class="col-4">
+    <div class="col-4 border-end border-start border-dark border-1">
       <div>
-          <h2>vos voitures</h2>
+          <h2>Vos réservations</h2>
+            <h6 class="title">En cours</h6>
             <div class="card-product">
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
               <div class="card-product-infos">
-                <h2>Product name</h2>
+                <h2>Car 1</h2>
+                <p>Product description with <strong>relevant info</strong> only.</p>
+              </div>
+            </div>
+             <h6 class="title">A venir</h6>
+            <div class="card-product">
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <div class="card-product-infos">
+                <h2>Car 1</h2>
                 <p>Product description with <strong>relevant info</strong> only.</p>
               </div>
             </div>
             <div class="card-product">
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
               <div class="card-product-infos">
-                <h2>Product name</h2>
+                <h2>Car 2</h2>
                 <p>Product description with <strong>relevant info</strong> only.</p>
               </div>
             </div>
-            <div class="card-product">
+             <h6 class="title">Passés</h6>
+             <div class="card-product" id="grise">
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
               <div class="card-product-infos">
-                <h2>Product name</h2>
-                <p>Product description with <strong>relevant info</strong> only.</p>
-              </div>
-            </div>
-             <div class="card-product">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              <div class="card-product-infos">
-                <h2>grisé</h2>
+                <h2>Car 1</h2>
                 <p>Product description with <strong>relevant info</strong> only.</p>
               </div>
             </div>
@@ -70,62 +73,48 @@
     </div>
 
     <div class="col-4" >
-      <div class="notification">
-        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" />
-        <div class="notification-content" style= 'font-size:12px'>
-          <p><small>14th January</small></p>
-          <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+      <h2>Vos demandes</h2>
+      <div class="notification d-flex justify-content-between align-items-center">
+        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" width:40 height:40 />
+        <div class="ps-3 notification-content">
+          <%# <p><small>14th January</small></p> %>
+          <p class="mb-0"><em>"Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit."</em></p>
         </div>
 
-        <div class="notification-actions">
-          <a href="#"><i class="fas fa-pencil-alt"></i></a>
+        <div class="notification-actions d-flex">
+          <a href="#"><i class="fas fa-check me-2"></i></a>
           <a href="#"><i class="far fa-trash-alt"></i></a>
         </div>
       </div>
 
-      <div class="notification">
-        <div>
-            <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-bordered"/>
-            <div class="notification-content" style= 'font-size:14px'>
-              <p><small>9th January</small></p>
-              <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
-            </div>
+      <div class="notification d-flex justify-content-between align-items-center my-4">
+        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" width:40 height:40 />
+        <div class="ps-3 notification-content">
+          <%# <p><small>14th January</small></p> %>
+          <p class="mb-0"><em>"Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit."</em></p>
+        </div>
 
-            <div class="notification-actions">
-              <a href="#"><i class="fas fa-pencil-alt"></i></a>
-              <a href="#"><i class="far fa-trash-alt"></i></a>
-            </div>
+        <div class="notification-actions d-flex">
+          <a href="#"><i class="fas fa-check me-2"></i></a>
+          <a href="#"><i class="far fa-trash-alt"></i></a>
         </div>
       </div>
+
+      <div class="notification d-flex justify-content-between align-items-center">
+        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" width:40 height:40 />
+        <div class="ps-3 notification-content">
+          <%# <p><small>14th January</small></p> %>
+          <p class="mb-0"><em>"Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit."</em></p>
+        </div>
+
+        <div class="notification-actions d-flex">
+          <a href="#"><i class="fas fa-check me-2"></i></a>
+          <a href="#"><i class="far fa-trash-alt"></i></a>
+        </div>
+      </div>
+
+
+
     </div>
+  </div>
 </div>
-
-
-      <%#= current_user.cars.each do |car| %>
-        <%# <div class=“card-product”>
-          <%# <div class=container> %>
-            <%# <img src=“https://images.unsplash.com/photo-1494905998402-395d579af36f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1NjQ3MjQxNA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080”/>
-            <div class=“card-product-infos”>
-              <h2>Nom de voiture</h2>
-              <p>model+ seats+ <strong>prix€</strong></p>
-            </div> %>
-            <%# <img src=“https://images.unsplash.com/photo-1494905998402-395d579af36f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1NjQ3MjQxNA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080”/>
-            <div class=“card-product-infos”>
-              <h2>Current Bookings</h2>
-              <%# <p>Your bokking <strong>relevant info</strong> only.</p> %>
-            <%# </div>
-          </div>
-        </div>
-
-         <div class=“card-product”>
-        </div> %>
-
-         <%# <div class=“card-product”>
-          <img src=“https://images.unsplash.com/photo-1494905998402-395d579af36f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1NjQ3MjQxNA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080”/>
-          <div class=“card-product-infos”>
-            <h2>Current Bookings</h2>
-            <p>Your bokking <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
-      <% end %>
-    <%# </div>  %>
