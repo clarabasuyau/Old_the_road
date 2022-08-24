@@ -37,6 +37,9 @@
       <div>
           <h2>Vos réservations</h2>
             <h6 class="title">En cours</h6>
+            <% @future_bookings.each do |booking| %>
+                    <%= render 'cars/car_card', car: booking.car %>
+             <% end %>
             <div class="card-product">
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
               <div class="card-product-infos">
