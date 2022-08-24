@@ -1,5 +1,5 @@
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
   <div class="container-fluid">
     <%= link_to root_path do %>
       <%= image_tag "logo.png", width: "200px", class: 'logo' %>
@@ -13,7 +13,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <%# <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Dashboard", "#", class: "nav-link" %>
           <%# </li> %>
           <%# <li class="nav-item dropdown"> %>
             <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
