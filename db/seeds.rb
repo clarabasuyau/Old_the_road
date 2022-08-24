@@ -65,8 +65,6 @@ User.destroy_all
 #   car.save!
 # end
 
-
-
 require 'faker'
 Car.destroy_all
 Booking.destroy_all
