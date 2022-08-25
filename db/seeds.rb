@@ -24,7 +24,6 @@ require "nokogiri"
 # puts doc.search(".figure.image-figure-image img").attr('src')
 # puts img
 
-
 # better version
 
 img = []
@@ -41,7 +40,6 @@ doc = Nokogiri::HTML(html, nil, "utf-8")
 doc.search(".product-image img").each do |ele|
   img << "https://www.joeyrent.com/" + ele.attr("src")
 end
-
 
 html = URI.open("https://www.joeyrent.com/classic-cars.php").read
 # 1. Parse HTML
@@ -98,11 +96,9 @@ cars = []
     cars << car
   end
 
-
 # cars.each do |car|
 #  new_car = Car.new(car)
 #  new_car.save!
 # end
-
 
 puts 'Finished!'
