@@ -73,28 +73,30 @@ Car.destroy_all
 User.destroy_all
 
 10.times do
- name = Faker::Name.first_name
- email = Faker::Internet.email
- password = "123456"
- phone_number = "0607080919"
- user = User.create!(name: name, email: email, password: password, phone_number: phone_number)
+  name = Faker::Name.first_name
+  email = Faker::Internet.email
+  password = "123456"
+  phone_number = "0607080919"
+  user = User.create!(name: name, email: email, password: password, phone_number: phone_number)
 end
 i = 0
 cars = []
-  15.times do
-    car = Car.create!(
-      brand_name: title[i],
-      model: Faker::Vehicle.model,
-      seats: seats[i],
-      city: Faker::Address.city,
-      price: rand(50..150).to_s,
-      picture: img[i],
-      overview: overview[i],
-      user: User.all.sample
-    )
-    i += 1
-    cars << car
-  end
+15.times do
+  file = URI.open(img[i])
+  car = Car.new(
+    brand_name: title[i],
+    model: Faker::Vehicle.model,
+    seats: seats[i],
+    city: Faker::Address.city,
+    price: rand(50..150).to_s,
+    overview: overview[i],
+    user: User.all.sample
+  )
+  car.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+  car.save!
+  i += 1
+  cars << car
+end
 
 # cars.each do |car|
 #  new_car = Car.new(car)
