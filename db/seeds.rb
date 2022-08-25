@@ -24,7 +24,6 @@ require "nokogiri"
 # puts doc.search(".figure.image-figure-image img").attr('src')
 # puts img
 
-
 # better version
 
 img = []
@@ -43,7 +42,6 @@ doc = Nokogiri::HTML(html, nil, "utf-8")
 doc.search(".product-image img").each do |ele|
   img << "https://www.joeyrent.com/" + ele.attr("src")
 end
-
 
 html = URI.open("https://www.joeyrent.com/classic-cars.php").read
 # 1. Parse HTML
@@ -75,7 +73,7 @@ end
 
 
 Booking.destroy_all
-Car.destroy_all
+Car.destroy_allhttps://github.com/clarabasuyau/Old_the_road/pull/58/conflict?name=db%252Fseeds.rb&ancestor_oid=93f8ab27eb3f2e14d3daf6f00bf2ec08c46eaed1&base_oid=08cb90e0cce6b9864910afaa893b0e5f1bd69278&head_oid=ff2be8765edab716b150ddcd308411a1c857a083
 User.destroy_all
 
 10.times do
@@ -103,11 +101,9 @@ cars = []
   end
 
 
-
 # cars.each do |car|
 #  new_car = Car.new(car)
 #  new_car.save!
 # end
-
 
 puts 'Finished!'

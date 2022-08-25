@@ -9,12 +9,19 @@ class CarsController < ApplicationController
         lng: car.longitude,
         info_window: render_to_string(partial: "info_window", locals: {car: car})
       }
+
+    @user = current_user
+    if params[:query].present?
+      @cars = Car.where("brand_name ILIKE ?", "%#{params[:query]}%")
+    else
+      @cars = Car.all
     end
   end
 
   def show
     @car = Car.find(params[:id])
     @booking = Booking.new
+    @user = current_user
   end
 
   def new
@@ -51,7 +58,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand_name, :model, :city, :seats, :price, :overview, :user_id)
-
+    params.require(:car).permit(:brand_name, :model, :city, :seats, :price, :overview, :user_id, :photo)
   end
 end

@@ -10,6 +10,9 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
 gem "devise"
 
+gem "dotenv-rails", groups: [:development, :test]
+
+gem "cloudinary"
 # faker pour la database
 gem "faker"
 
