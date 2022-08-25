@@ -1,0 +1,15 @@
+<div class="card-product">
+  <%= cl_image_tag request.user.photo.key if request.user.photo.key %>
+  <div class="card-product-infos">
+    <%# <h5><%= request.start_rent %></h5>
+    <%# <h5><%= request.end_rent %></h5>
+    <%# <h5><%= request.message %></h5>
+    <h5><%= request.status %></h5>
+    <%#= car.overview %>
+    <div class="notification-actions d-flex">
+      <%=link_to "✏️", car_path(request.car) %>
+      <%=link_to "🗑", booking_path(request),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    </div>
+  </div>
+</div>

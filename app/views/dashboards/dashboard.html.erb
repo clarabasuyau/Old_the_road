@@ -77,21 +77,13 @@
     </div>
 
     <div class="col-4" >
-
+    
       <h2>Your requests</h2>
-      <%= @current_requests&.first&.message  %>
-      <div class="notification d-flex justify-content-between align-items-center">
-        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" width:40 height:40 />
-        <div class="ps-3 notification-content">
-          <%# <p><small>14th January</small></p> %>
-          <p class="mb-0"><em>"Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit."</em></p>
-        </div>
+      <% @current_requests.each do |request| %>
+        <%= render 'requests', request: request %>
+      <% end %>
 
-        <div class="notification-actions d-flex">
-          <a href="#"><i class="fas fa-check me-2"></i></a>
-          <a href="#"><i class="far fa-trash-alt"></i></a>
-        </div>
-      </div>
+
 
       <div class="notification d-flex justify-content-between align-items-center">
         <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" width:40 height:40 />
