@@ -6,7 +6,6 @@
 }
 
 .card-trip > img {
-  height: 200px;
   width: 100%;
   object-fit: cover;
 }
@@ -33,6 +32,7 @@
 
 .card-trip-infos a {
   color: black;
+  margin-bottom: 5px;
 }
 
 .card-trip .card-trip-infos .btn{
@@ -95,4 +95,12 @@ h1{
   position: sticky;
   top: 0;
   width: 40%;
+
+.card-text {
+  text-align: justify;
+}
+
+.form .btn{
+  background-color: #224751;
+  border: #224751;
 }
