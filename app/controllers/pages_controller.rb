@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @cars = Car.all
+    @user = current_user
   end
 end

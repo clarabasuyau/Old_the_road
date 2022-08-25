@@ -13,6 +13,8 @@ class User < ApplicationRecord
   # Les voitures que l'on m'a loué
   has_many :requested_cars, through: :cars, source: :bookings
 
+  #profile picture de l'utilisateur
+  has_one_attached :photo
 
   validates :name, :phone_number, presence: true
 end
