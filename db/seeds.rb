@@ -29,9 +29,11 @@ require "nokogiri"
 img = []
 title = []
 car_url = ""
-car_html =""
+car_html = ""
 overview = []
 seats = []
+city = ["Paris", "Bordeaux", "Saint-Tropez"]
+city_car = []
 i = 0
 
 html = URI.open("https://www.joeyrent.com/classic-cars.php").read
@@ -52,6 +54,7 @@ doc.search(".product-image a").each_with_index do |ele, index|
   car_doc = Nokogiri::HTML(car_html, nil, "utf-8")
   seats << car_doc.search(".table > tbody > tr > td").at(1).text if index.even?
   overview << car_doc.search(".col-md-12 p").at(3).text if index.even?
+  city_car << city.sample if index.even?
 end
 
 
@@ -62,6 +65,7 @@ end
 # puts car_url
 # puts seats
 # puts overview
+# puts city_car.count
 
 # ----------------------
 
@@ -81,13 +85,14 @@ User.destroy_all
 end
 i = 0
 cars = []
+
 15.times do
   file = URI.open(img[i])
   car = Car.new(
     brand_name: title[i],
     model: Faker::Vehicle.model,
     seats: seats[i],
-    city: Faker::Address.city,
+    city: city_car[i],
     price: rand(50..150).to_s,
     overview: overview[i],
     user: User.all.sample
@@ -97,6 +102,8 @@ cars = []
   i += 1
   cars << car
 end
+
+
 
 # cars.each do |car|
 #  new_car = Car.new(car)
