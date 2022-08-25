@@ -1,5 +1,5 @@
 <div class="card-product">
-  <%= image_tag(car.picture) %>
+  <%= cl_image_tag(car.photo.key) %>
   <div class="card-product-infos">
     <h2><%= car.brand_name %></h2>
     <%#= car.overview %>
