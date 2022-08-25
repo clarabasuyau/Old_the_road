@@ -76,6 +76,26 @@ h1{
   font-family: 'Cinzel', serif;
 }
 
+.main-container {
+  display: flex;
+}
+
+.cards-index{
+  background-color: white;
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+  width: 60%;
+}
+
+#the-map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  width: 40%;
+
 .card-text {
   text-align: justify;
 }
