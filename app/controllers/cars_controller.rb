@@ -10,11 +10,13 @@ class CarsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: {car: car})
       }
 
-    @user = current_user
-    if params[:query].present?
-      @cars = Car.where("brand_name ILIKE ?", "%#{params[:query]}%")
-    else
-      @cars = Car.all
+      @user = current_user
+      if params[:query].present?
+        @cars = Car.where("brand_name ILIKE ?", "%#{params[:query]}%")
+      else
+        @cars = Car.all
+      end
+
     end
   end
 
