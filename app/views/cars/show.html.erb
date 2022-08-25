@@ -20,14 +20,13 @@
 
       <div class="card-trip-infos mt-3">
         <p class="card-text text-muted"> <%=@car.overview%></p>
-        <%# <p class="card-text text-justify"> Hello hjhfffdsfjlsdzfhldflhdfhludfgjusdfglflgfdlhlfdhlhfdlhfdslhdslhsflhfdslhjfdlhjfdsljfdljfsdjfdfdjh</p> %>
-        <div>
+        <div style="margin-bottom: 50px;">
           <a href="<%= cars_path %>" >Back to the cars</a>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-4 mt-5">
+    <div class="form col-sm-4 mt-5">
       <h2><%= @car.price %> € / per day </h2>
       <div data-controller="flatpickr">
         <%= simple_form_for [@car, @booking],
