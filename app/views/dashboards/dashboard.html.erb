@@ -20,19 +20,19 @@
       <div>
           <h2>Your bookings</h2>
 
-            <h6 class="title">En cours</h6>
+            <h6 class="title">Pending</h6>
             <% @current_bookings.each do |booking| %>
               <%= render 'cars/car_card', car: booking.car, booking: booking %>
             <% end %>
 
 
-            <h6 class="title">A venir</h6>
+            <h6 class="title">Coming</h6>
             <% @future_bookings.each do |booking| %>
               <%= render 'cars/car_card', car: booking.car, booking: booking %>
             <% end %>
 
 
-             <h6 class="title">Passés</h6>
+             <h6 class="title">Past</h6>
              <% @past_bookings.each do |booking| %>
                     <%= render 'cars/car_card', car: booking.car, booking: booking %>
              <% end %>
