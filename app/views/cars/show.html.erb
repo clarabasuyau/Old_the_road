@@ -14,7 +14,7 @@
       </div>
 
       <div class="card-trip">
-        <img src="<%= @car.picture %>" class="card-img-top" alt="car">
+        <%= cl_image_tag @car.photo.key, class:"card-img-top", alt:"car" %>
         <%# <%= image_tag car.picture %>
       </div>
 

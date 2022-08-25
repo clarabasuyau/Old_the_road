@@ -20,7 +20,7 @@
 
  <% @cars.sample(3).each do |car|%>
     <div class="card-trip">
-      <img src="<%= car.picture %>" class="card-img-top" alt="car">
+      <%= cl_image_tag car.photo.key, class:"card-img-top", alt:"car" %>
         <div class="card-trip-infos">
           <div class="card-trip-infos-top">
             <h2><%=car.brand_name + ' ' + car.model%></h2>
