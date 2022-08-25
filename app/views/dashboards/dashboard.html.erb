@@ -1,14 +1,11 @@
 <div class="container" >
   <div class="row my-5">
       <div class="d-flex justify-content-top pb-5 align-items-center">
-        <img src="https://media.vogue.fr/photos/5cd945cd3296a520d015463d/2:3/w_2560%2Cc_limit/GettyImages-168793000.jpg" class="rounded-circle" width=60 height=65>
-        <h2 class="ps-3">👋🏼  Hello <%= current_user.name %></h2>
-
-
+        <h2 class="ps-3">Hello <%= current_user.name %></h2>
       </div>
     <div class="col-4">
       <div>
-        <h2>Vos voitures</h2>
+        <h2>Your cars</h2>
           <div class="card-product">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-product-infos">
@@ -35,7 +32,7 @@
 
     <div class="col-4 border-end border-start border-dark border-1">
       <div>
-          <h2>Vos réservations</h2>
+          <h2>Your bookings</h2>
 
             <h6 class="title">En cours</h6>
             <% @current_bookings.each do |booking| %>
@@ -57,7 +54,7 @@
     </div>
 
     <div class="col-4" >
-      <h2>Vos demandes</h2>
+      <h2>Your requests</h2>
       <div class="notification d-flex justify-content-between align-items-center">
         <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" width:40 height:40 />
         <div class="ps-3 notification-content">
