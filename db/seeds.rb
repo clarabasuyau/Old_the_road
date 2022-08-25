@@ -73,7 +73,7 @@ end
 
 
 Booking.destroy_all
-Car.destroy_allhttps://github.com/clarabasuyau/Old_the_road/pull/58/conflict?name=db%252Fseeds.rb&ancestor_oid=93f8ab27eb3f2e14d3daf6f00bf2ec08c46eaed1&base_oid=08cb90e0cce6b9864910afaa893b0e5f1bd69278&head_oid=ff2be8765edab716b150ddcd308411a1c857a083
+Car.destroy_all
 User.destroy_all
 
 10.times do
