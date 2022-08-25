@@ -16,6 +16,12 @@ class BookingsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to car_path(@booking)
+
+  end
 
   def destroy
     @booking = Booking.find(params[:id])
@@ -30,6 +36,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_rent, :end_rent, :user_id, :car_id)
+    params.require(:booking).permit(:start_rent, :end_rent, :message, :user_id, :car_id)
   end
 end

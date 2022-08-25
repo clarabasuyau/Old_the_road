@@ -29,15 +29,34 @@
 
     <div class="col-sm-4 mt-5">
       <h2><%= @car.price %> € / per day </h2>
-      <%= simple_form_for [@car, @booking] do |f| %>
-      <div class="form-inputs">
-        <%= f.input :start_rent, as: :date %>
-        <%= f.input :end_rent, as: :date %>
+      <div data-controller="flatpickr">
+        <%= simple_form_for [@car, @booking],
+                            html: {
+                              data: {
+                                controller: 'flatpickr'
+                              }
+                            } do |f| %>
+          <%= f.input :start_rent,
+                      as: :string,
+                      # label: 'Start - End',
+                      input_html: {
+                        data: {
+                          flatpickr_target: 'startDateInput',
+                        }
+                      } %>
+          <%= f.input :end_rent,
+                      as: :string,
+                      # wrapper_html: { class: 'd-none' },
+                      input_html: {
+                        data: {
+                          flatpickr_target: 'endDateInput',
+                        }
+                      } %>
+          <%= f.input :message  %>
+          <%= f.submit 'Book now!', class: 'btn btn-primary' %>
+        <% end %>
+
       </div>
-      <div class="form-actions">
-        <%= f.button :submit, "Book", class: "btn btn-dark w-100 rounded bg-warning border-0 mt-2"%>
-      </div>
-      <% end %>
     </div>
   </div>
 </div>

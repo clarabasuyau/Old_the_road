@@ -2,6 +2,16 @@
   <%= image_tag(car.picture) %>
   <div class="card-product-infos">
     <h2><%= car.brand_name %></h2>
-    <p><%= car.overview %></p>
+    <%#= car.overview %>
+    <div class="notification-actions d-flex">
+      <%=link_to car_path(car) do %>
+        <i class="fas fa-pencil me-2"></i>
+      <% end %>
+      <%=link_to "🗑", booking_path(booking),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+    </div>
   </div>
 </div>
+
+
+<%# ,data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

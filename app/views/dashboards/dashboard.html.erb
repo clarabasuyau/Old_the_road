@@ -1,7 +1,7 @@
 <div class="container" >
   <div class="row my-5">
       <div class="d-flex justify-content-top pb-5 align-items-center">
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="rounded-circle" width=60>
+        <img src="https://media.vogue.fr/photos/5cd945cd3296a520d015463d/2:3/w_2560%2Cc_limit/GettyImages-168793000.jpg" class="rounded-circle" width=60 height=65>
         <h2 class="ps-3">👋🏼  Hello <%= current_user.name %></h2>
 
 
@@ -36,36 +36,22 @@
     <div class="col-4 border-end border-start border-dark border-1">
       <div>
           <h2>Vos réservations</h2>
-            <h6 class="title">En cours</h6>
-            <% @future_bookings.each do |booking| %>
-                    <%= render 'cars/car_card', car: booking.car %>
-             <% end %>
-            <div class="card-product">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              <div class="card-product-infos">
-                <h2>Car 1</h2>
-                <p>Product description with <strong>relevant info</strong> only.</p>
-              </div>
-            </div>
-             <h6 class="title">A venir</h6>
-            <div class="card-product">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              <div class="card-product-infos">
-                <h2>Car 1</h2>
-                <p>Product description with <strong>relevant info</strong> only.</p>
-              </div>
-            </div>
-            <div class="card-product">
 
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              <div class="card-product-infos">
-                <h2>Car 2</h2>
-                <p>Product description with <strong>relevant info</strong> only.</p>
-              </div>
-            </div>
+            <h6 class="title">En cours</h6>
+            <% @current_bookings.each do |booking| %>
+              <%= render 'cars/car_card', car: booking.car, booking: booking %>
+            <% end %>
+
+
+            <h6 class="title">A venir</h6>
+            <% @future_bookings.each do |booking| %>
+              <%= render 'cars/car_card', car: booking.car, booking: booking %>
+            <% end %>
+
+
              <h6 class="title">Passés</h6>
              <% @past_bookings.each do |booking| %>
-                    <%= render 'cars/car_card', car: booking.car %>
+                    <%= render 'cars/car_card', car: booking.car, booking: booking %>
              <% end %>
         </div>
     </div>
