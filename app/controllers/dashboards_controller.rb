@@ -6,5 +6,6 @@ class DashboardsController < ApplicationController
     @past_bookings = @user.bookings.select {|booking| booking.end_rent < Date.today}
     @current_bookings = @user.bookings.select {|booking| booking.start_rent == Date.today}
     @future_bookings = @user.bookings.select {|booking| booking.start_rent > Date.today}
+    @current_requests = @user.requested_cars.pending
   end
 end
