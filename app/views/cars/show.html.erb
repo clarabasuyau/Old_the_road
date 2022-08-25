@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div class="form col-sm-4 mt-5">
+    <div class="form col-sm-4 mt-5 sticky">
       <h2><%= @car.price %> € / per day </h2>
       <div data-controller="flatpickr">
         <%= simple_form_for [@car, @booking],
@@ -35,6 +35,7 @@
                                 controller: 'flatpickr'
                               }
                             } do |f| %>
+                            <div class="d-flex flex-column">
           <%= f.input :start_rent,
                       as: :string,
                       # label: 'Start - End',
@@ -52,7 +53,8 @@
                         }
                       } %>
           <%= f.input :message  %>
-          <%= f.submit 'Book now!', class: 'btn btn-primary' %>
+          <%= f.submit 'Book now!', class: 'btn btn-primary align-self-center' %>
+                          </div>
         <% end %>
 
       </div>
