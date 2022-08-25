@@ -1,7 +1,7 @@
 <div class="container" >
   <div class="row my-5">
       <div class="d-flex justify-content-top pb-5 align-items-center">
-        <h2 class="ps-3">Hello <%= current_user.name %></h2>
+        <h1 class="ps-3">Hello <%= current_user.name %></h2>
       </div>
     <div class="col-4">
       <div>
@@ -10,20 +10,6 @@
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
             <div class="card-product-infos">
               <h2>Car 1</h2>
-              <p>Product description with <strong>relevant info</strong> only.</p>
-            </div>
-          </div>
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2>Car 2</h2>
-              <p>Product description with <strong>relevant info</strong> only.</p>
-            </div>
-          </div>
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2>Car 3</h2>
               <p>Product description with <strong>relevant info</strong> only.</p>
             </div>
           </div>
@@ -55,7 +41,7 @@
 
     <div class="col-4" >
 
-      <h2>Your requests</h2>  
+      <h2>Your requests</h2>
       <%= @current_requests&.first&.message  %>
       <div class="notification d-flex justify-content-between align-items-center">
         <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" width:40 height:40 />
@@ -70,19 +56,6 @@
         </div>
       </div>
 
-      <div class="notification d-flex justify-content-between align-items-center my-4">
-        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" width:40 height:40 />
-        <div class="ps-3 notification-content">
-          <%# <p><small>14th January</small></p> %>
-          <p class="mb-0"><em>"Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit."</em></p>
-        </div>
-
-        <div class="notification-actions d-flex">
-          <a href="#"><i class="fas fa-check me-2"></i></a>
-          <a href="#"><i class="far fa-trash-alt"></i></a>
-        </div>
-      </div>
-
       <div class="notification d-flex justify-content-between align-items-center">
         <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-bordered" width:40 height:40 />
         <div class="ps-3 notification-content">
@@ -95,9 +68,6 @@
           <a href="#"><i class="far fa-trash-alt"></i></a>
         </div>
       </div>
-
-
-
     </div>
   </div>
 </div>
