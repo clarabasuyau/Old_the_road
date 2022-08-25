@@ -6,7 +6,6 @@
 }
 
 .card-trip > img {
-  height: 200px;
   width: 100%;
   object-fit: cover;
 }
@@ -33,6 +32,7 @@
 
 .card-trip-infos a {
   color: black;
+  margin-bottom: 5px;
 }
 
 .card-trip .card-trip-infos .btn{
@@ -74,4 +74,34 @@
 
 h1{
   font-family: 'Cinzel', serif;
+}
+
+.main-container {
+  display: flex;
+}
+
+.cards-index{
+  background-color: white;
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+  width: 60%;
+}
+
+#the-map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  width: 40%;
+}
+
+.card-text {
+  text-align: justify;
+}
+
+.form .btn{
+  background-color: #224751;
+  border: #224751;
 }
