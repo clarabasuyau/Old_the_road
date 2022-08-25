@@ -11,10 +11,11 @@ class CarsController < ApplicationController
       }
 
     @user = current_user
-    if params[:query].present?
-      @cars = Car.where("brand_name ILIKE ?", "%#{params[:query]}%")
-    else
-      @cars = Car.all
+      if params[:query].present?
+        @cars = Car.where("brand_name ILIKE ?", "%#{params[:query]}%")
+      else
+        @cars = Car.all
+      end
     end
   end
 
