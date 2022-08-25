@@ -21,17 +21,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.banner .btn-gradient {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 15px;
-  font-weight: bold;
-  background: #e70a18;
-  transition: background 0.3s ease;
-  border: 1px solid #e70a18;
-}
-
-.banner .btn-gradient:hover {
-  background: #e70a18;
-  color: white;
+.banner .btn {
+  background-color: #224751;
 }

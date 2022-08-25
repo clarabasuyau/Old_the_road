@@ -2,13 +2,8 @@
   <div class="container">
     <h1><strong><span data-controller="typed-js"></span></strong></h1>
     <%# <p><em>Rent the car of your dreams</em></p> %>
-
     <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find the car of your dreams"
-      %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find the car of your dreams" %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
