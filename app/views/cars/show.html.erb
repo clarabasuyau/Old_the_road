@@ -4,7 +4,7 @@
 
       <div class="card-trip-infos-top">
         <div>
-          <h1><%=@car.brand_name + ' ' + @car.model%></h1>
+          <h1><%=@car.brand_name%></h1>
         </div>
         <div>
           <ul>
@@ -14,7 +14,7 @@
       </div>
 
       <div class="card-trip">
-        <img src="<%= @car.picture %>" class="card-img-top" alt="car">
+        <%= cl_image_tag @car.photo.key, class:"card-img-top", alt:"car" %>
         <%# <%= image_tag car.picture %>
       </div>
 

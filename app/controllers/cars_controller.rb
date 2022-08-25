@@ -3,11 +3,26 @@ class CarsController < ApplicationController
 
   def index
     @cars = Car.all
+    @markers = @cars.geocoded.map do |car|
+      {
+        lat: car.latitude,
+        lng: car.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {car: car})
+      }
+
+    @user = current_user
+      if params[:query].present?
+        @cars = Car.where("brand_name ILIKE ?", "%#{params[:query]}%")
+      else
+        @cars = Car.all
+      end
+    end
   end
 
   def show
     @car = Car.find(params[:id])
     @booking = Booking.new
+    @user = current_user
   end
 
   def new
@@ -16,9 +31,9 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-    @car.list = @list
+    @car.user = current_user
     if @car.save
-      redirect_to root_path
+      redirect_to dashboards_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,7 +59,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand_name, :city, :seats, :user_id)
-
+    params.require(:car).permit(:brand_name, :model, :city, :seats, :price, :overview, :user_id, :photo)
   end
 end
