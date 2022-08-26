@@ -49,10 +49,15 @@
 .card-trip-infos-top ul {
   margin-right: 1px;
   padding: 0px;
-  list-style: none
+  list-style: none;
+  font-size: 12px;
 }
 .card-trip-infos-top > li {
   display: inline;
+}
+
+.card-trip-infos-top h2{
+  width: 230px;
 }
 
 .cards {
@@ -81,16 +86,17 @@ h1{
 }
 
 .cards-index{
-  background-color: white;
+  background-color: #E7E6D2;
   display: grid;
   flex-grow: 1;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
   width: 60%;
 }
 
 #the-map {
+  border: solid 2px ;
   height: 100vh;
   position: sticky;
   top: 0;
@@ -100,6 +106,7 @@ h1{
 .card-text {
   text-align: justify;
 }
+
 
 .form .btn{
   background-color: #E67E23;

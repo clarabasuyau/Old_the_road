@@ -32,8 +32,7 @@ car_url = ""
 car_html = ""
 overview = []
 seats = []
-city = ["Paris", "Bordeaux", "Saint-Tropez"]
-city_car = []
+city = []
 i = 0
 
 html = URI.open("https://www.joeyrent.com/classic-cars.php").read
@@ -54,9 +53,26 @@ doc.search(".product-image a").each_with_index do |ele, index|
   car_doc = Nokogiri::HTML(car_html, nil, "utf-8")
   seats << car_doc.search(".table > tbody > tr > td").at(1).text if index.even?
   overview << car_doc.search(".col-md-12 p").at(3).text if index.even?
-  city_car << city.sample if index.even?
 end
 
+# Ajout de city à la mano #savemysoul
+city << "128 Boulevard de Clichy, 75018 Paris"
+city << "16 Villa Gaudelet, 75011 Paris"
+city << "15 Avenue de Choisy, 75013 Paris"
+city << "27 Avenue Aristide Briand, 94230 Cachan"
+city << "166 Boulevard de Stalingrad, 94200 Ivry-sur-Seine"
+
+city << "6 Rue Bobillot, 75013 Paris"
+city << "6 Rue de la Division Leclerc, 78460 Chevreuse"
+city << "40 Avenue du Colonel Rozanoff, 91220 Brétigny-sur-Orge"
+city << "9 Chemin des Mèches, 94000 Créteil"
+city << "60 Rue du Général de Gaulle, 77000 Melun"
+
+city << "144 Rue Abbé de l'Épée, 33000 Bordeaux"
+city << "67 Rue du Portail Neuf, 83990 Saint-Tropez"
+city << "7 Boulevard de la Libération, 13001 Marseille"
+city << "84 Rue Carnot, 74000 Annecy"
+city << "1 Rue du Tabour, 45000 Orléans"
 
 # Test  ----------------
 
@@ -92,7 +108,7 @@ cars = []
     brand_name: title[i],
     model: Faker::Vehicle.model,
     seats: seats[i],
-    city: city_car[i],
+    city: city[i],
     price: rand(50..150).to_s,
     overview: overview[i],
     user: User.all.sample

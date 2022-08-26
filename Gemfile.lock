@@ -120,6 +120,7 @@ GEM
     faker (2.22.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
+    flatpickr (4.6.11.0)
     font-awesome-sass (6.1.2)
       sassc (~> 2.0)
     geocoder (1.8.0)
@@ -291,6 +292,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
+  flatpickr
   font-awesome-sass (~> 6.1)
   geocoder
   jbuilder
