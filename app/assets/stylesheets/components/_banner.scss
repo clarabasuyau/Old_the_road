@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  text-align: end;
+  // text-align: end;
   margin-bottom: 20px;
 }
 
@@ -25,4 +25,8 @@
 .banner .btn {
   background-color: #E67E23;
   border: #E67E23;
+}
+
+.btn-search {
+  width: 160px;
 }
