@@ -3,7 +3,7 @@
     <div class="col-sm-8">
 
       <div class="card-trip-infos-top">
-        <div>
+        <div class="mb-2">
           <h1><%=@car.brand_name%></h1>
         </div>
         <div>
@@ -18,7 +18,10 @@
         <%# <%= image_tag car.picture %>
       </div>
 
-      <div class="card-trip-infos mt-3">
+      <div class="card-trip-infos mt-4">
+        <div class= "description mt-3">
+        <p>Description</p>
+        </div>
         <p class="card-text text-muted"> <%=@car.overview%></p>
         <div style="margin-bottom: 50px;">
           <a href="<%= cars_path %>" >Back to the cars</a>
@@ -26,7 +29,7 @@
       </div>
     </div>
 
-    <div class="form col-sm-4 mt-5 sticky">
+    <div class="form col-sm-4 mt-2 sticky">
       <h2><%= @car.price %> € / per day </h2>
       <div data-controller="flatpickr">
         <%= simple_form_for [@car, @booking],
