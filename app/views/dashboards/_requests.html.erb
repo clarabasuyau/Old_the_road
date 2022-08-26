@@ -3,13 +3,14 @@
   <div class="card-product-infos">
     <%# <h5><%= request.start_rent %></h5>
     <%# <h5><%= request.end_rent %></h5>
-    <%# <h5><%= request.message %></h5>
-    <h5><%= request.status %></h5>
+    <h5><%= request.user.name %></h5>
+    <p><%= request.message %></p>
+    <%# <h5><%= request.status %></h5>
     <%#= car.overview %>
     <% if request.pending? %>
       <div class="notification-actions d-flex">
-        <%=link_to "✏️",  car_booking_path(request.car, request, booking: {status: 1}), data: { turbo_method: :patch } %>
-        <%=link_to "🗑", booking_path(request), data: {turbo_method: 'delete'} %>
+        <%=link_to "✅",  car_booking_path(request.car, request, booking: {status: 1}), data: { turbo_method: :patch } %>
+        <%=link_to "❌",  car_booking_path(request.car, request, booking: {status: 2}), data: { turbo_method: :patch } %>
       </div>
     <% end %>
   </div>
