@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get 'dashboards', to: 'dashboards#dashboard'
-  resources :cars, only: [:index, :show] do
+  resources :cars, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:new, :create, :update]
   end
   resources :bookings, only: %i[destroy]

@@ -19,6 +19,8 @@
       </div>
 
       <div class="card-trip-infos mt-3">
+      <h3><%= @car.city%></h3>
+      <h2>Description</h2>
         <p class="card-text text-muted"> <%=@car.overview%></p>
         <div style="margin-bottom: 50px;">
           <a href="<%= cars_path %>" >Back to the cars</a>
