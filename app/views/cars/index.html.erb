@@ -1,9 +1,9 @@
 <h1 class= "text-center mt-4 mb-4"><strong>Choose your dream car !</strong></h1>
 
-<div class="container mb-4">
+<div class="container mb-4 w-50">
     <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find the car of your dreams" %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= text_field_tag :query, params[:query], class: "form-control me-3", placeholder: "Find the car of your dreams" %>
+      <%= submit_tag "Search", class: "btn btn-primary btn-search" %>
     <% end %>
 </div>
 
