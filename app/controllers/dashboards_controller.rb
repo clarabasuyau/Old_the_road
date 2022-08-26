@@ -6,6 +6,8 @@ class DashboardsController < ApplicationController
     @past_bookings = @user.bookings.select {|booking| booking.end_rent < Date.today && booking.request == false}
     @current_bookings = @user.bookings.select {|booking| booking.start_rent == Date.today && booking.request == false}
     @future_bookings = @user.bookings.select {|booking| booking.start_rent > Date.today  && booking.request == false}
-    @current_requests = @user.bookings.select {|booking| booking.status == "pending" && booking.request == true}
+    @pending_requests = @user.requested_cars.pending
+    @accepted_requests = @user.requested_cars.accepted
+    @declined_requests = @user.requested_cars.declined
   end
 end
