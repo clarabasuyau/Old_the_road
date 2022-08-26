@@ -18,8 +18,14 @@ class BookingsController < ApplicationController
   end
   def update
     @booking = Booking.find(params[:id])
+    params[:booking][:status] = params[:booking][:status].to_i if params[:booking][:status].present?
     @booking.update(booking_params)
-    redirect_to car_path(@booking)
+    if booking_params[:status].present?
+      redirect_to dashboards_path
+
+    else
+      redirect_to car_path(@booking)
+    end
 
   end
 
@@ -36,6 +42,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_rent, :end_rent, :message, :user_id, :car_id)
+    params.require(:booking).permit(:start_rent, :end_rent, :message, :status, :user_id, :car_id)
   end
 end

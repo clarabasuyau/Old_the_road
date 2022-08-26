@@ -7,9 +7,8 @@
     <h5><%= request.status %></h5>
     <%#= car.overview %>
     <div class="notification-actions d-flex">
-      <%=link_to "✏️", car_path(request.car) %>
-      <%=link_to "🗑", booking_path(request),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      <%=link_to "✏️",  car_booking_path(request.car, request, booking: {status: 1}), data: { turbo_method: :patch } %>
+      <%=link_to "🗑", booking_path(request), data: {turbo_method: 'delete'} %>
     </div>
   </div>
 </div>
