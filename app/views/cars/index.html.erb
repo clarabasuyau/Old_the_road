@@ -1,15 +1,11 @@
-<h1 class= "text-center mt-4 "><strong>Choose your dream car !</strong></h1>
+<h1 class= "text-center mt-4 mb-4"><strong>Choose your dream car !</strong></h1>
 
-<%# <div class="container">
-  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-    <div class="search-form-control form-group">
-      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Search
-      </button>
-    </div>
-  </form>
-</div> %>
+<div class="container mb-4">
+    <%= form_with url: cars_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find the car of your dreams" %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+</div>
 
 <div class="main-container">
   <div class="cards-index">
@@ -41,6 +37,4 @@
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-
-
 </div>
