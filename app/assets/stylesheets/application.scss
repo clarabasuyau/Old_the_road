@@ -18,3 +18,10 @@
   // 40px = hauteur navbar, 100 =hauteur footer
   min-height: calc(100vh - 80px - 50px);
 }
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
