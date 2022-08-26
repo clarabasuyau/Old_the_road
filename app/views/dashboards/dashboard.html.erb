@@ -13,8 +13,7 @@
                 <h2>
                   <%= car.brand_name %>
                 </h2>
-                <%= car.overview %>
-                <p>Product description with <strong>relevant info</strong> only.</p>
+               <h2><%= car.price %> €</h2>
               </div>
             </div>
           <% end %>
@@ -61,35 +60,37 @@
       <div>
           <h2>Your bookings</h2>
 
-            <h6 class="title ms-3" >Pending</h6>
+            <h6 class="title ms-4" >Pending</h6>
             <% @current_bookings.each do |booking| %>
               <%= render 'cars/car_card', car: booking.car, booking: booking %>
             <% end %>
 
 
-            <h6 class="title1 ms-3">Coming</h6>
+            <h6 class="title1 ms-4">Coming</h6>
             <% @future_bookings.each do |booking| %>
               <%= render 'cars/car_card', car: booking.car, booking: booking %>
             <% end %>
 
 
-             <h6 class="title2 ms-3">Past</h6>
+             <h6 class="title2 ms-4">Past</h6>
              <% @past_bookings.each do |booking| %>
                     <%= render 'cars/car_card', car: booking.car, booking: booking %>
              <% end %>
         </div>
     </div>
-    <% console %>
 
     <div class="col-4" >
 
       <h2>Your requests</h2>
+      <h6 class= "title ms-4">Pending</h6>
       <% @pending_requests.each do |request| %>
         <%= render 'requests', request: request %>
       <% end %>
+      <h6 class= "title1 ms-4">Accepted</h6>
       <% @accepted_requests.each do |request| %>
         <%= render 'requests', request: request %>
       <% end %>
+      <h6 class= "title2 ms-4">Declined</h6>
       <% @declined_requests.each do |request| %>
         <%= render 'requests', request: request %>
       <% end %>
