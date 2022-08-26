@@ -3,13 +3,14 @@
       <div class="d-flex justify-content-top pb-5 align-items-center">
         <h1 class="ps-3">Hello <%= current_user.name %></h2>
       </div>
-    <div class="col-4">
+    <div class="px-4 col-4">
       <div>
         <h2>Your cars</h2>
+        <h6>You have <span class="title"> <%= @cars.length %> </span> in your garage</h6>
           <% @cars.each do |car| %>
             <div class="card-product">
               <%= cl_image_tag car.photo.key, class:"car-photo"%>
-              <div class="card-product-infos">
+              <div class="card-product-infos p-3">
                 <h2>
                   <%= car.brand_name %>
                 </h2>
@@ -56,41 +57,41 @@
       </div>
     </div>
 
-    <div class="col-4 border-end border-start border-dark border-1">
+    <div class="px-4 col-4 border-end border-start border-dark border-1">
       <div>
           <h2>Your bookings</h2>
 
-            <h6 class="title ms-4" >Pending</h6>
+            <h6 class="title" >Pending</h6>
             <% @current_bookings.each do |booking| %>
               <%= render 'cars/car_card', car: booking.car, booking: booking %>
             <% end %>
 
 
-            <h6 class="title1 ms-4">Coming</h6>
+            <h6 class="title1">Coming</h6>
             <% @future_bookings.each do |booking| %>
               <%= render 'cars/car_card', car: booking.car, booking: booking %>
             <% end %>
 
 
-             <h6 class="title2 ms-4">Past</h6>
+             <h6 class="title2">Past</h6>
              <% @past_bookings.each do |booking| %>
                     <%= render 'cars/car_card', car: booking.car, booking: booking %>
              <% end %>
         </div>
     </div>
 
-    <div class="col-4" >
+    <div class="px-4 col-4" >
 
       <h2>Your requests</h2>
-      <h6 class= "title ms-4">Pending</h6>
+      <h6 class= "title">Pending</h6>
       <% @pending_requests.each do |request| %>
         <%= render 'requests', request: request %>
       <% end %>
-      <h6 class= "title1 ms-4">Accepted</h6>
+      <h6 class= "title1">Accepted</h6>
       <% @accepted_requests.each do |request| %>
         <%= render 'requests', request: request %>
       <% end %>
-      <h6 class= "title2 ms-4">Declined</h6>
+      <h6 class= "title2">Declined</h6>
       <% @declined_requests.each do |request| %>
         <%= render 'requests', request: request %>
       <% end %>

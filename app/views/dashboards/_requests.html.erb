@@ -1,15 +1,20 @@
 <div class="card-product">
-  <%= cl_image_tag request.user.photo.key if request.user.photo.key %>
-  <div class="card-product-infos">
-    <%# <h5><%= request.start_rent %></h5>
-    <%# <h5><%= request.end_rent %></h5>
-    <h5><%= request.user.name %></h5>
-    <p><%= request.message %></p>
+  <% if request.user.photo.key %>
+   <%= cl_image_tag request.user.photo.key %>
+  <% else %>
+    <%= image_tag "profile.jpg"%>
+  <% end %>
+  <div class="card-product-infos p-3 d-flex justify-content-between align-items-center w-100">
+    <div>
+      <h5 class="m-0"><%= request.user.name %></h5>
+      <p class="m-0"><%= request.start_rent %> | <%= request.end_rent %></p>
+      <p><em>"<%= request.message %></em>"</p>
+    </div>
     <%# <h5><%= request.status %></h5>
     <%#= car.overview %>
     <% if request.pending? %>
       <div class="notification-actions d-flex">
-        <%=link_to "✅",  car_booking_path(request.car, request, booking: {status: 1}), data: { turbo_method: :patch } %>
+        <%=link_to "✅",  car_booking_path(request.car, request, booking: {status: 1}), data: { turbo_method: :patch }, class:"me-2" %>
         <%=link_to "❌",  car_booking_path(request.car, request, booking: {status: 2}), data: { turbo_method: :patch } %>
       </div>
     <% end %>
