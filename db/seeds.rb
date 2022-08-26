@@ -133,13 +133,47 @@ kev_car = Car.last
 kev_car.user = kev
 kev_car.save!
 nid = User.first
+ruzan = User.all.reject { |u| u.email == 'me@mail.com' }.sample
+# ruzan = User.where.not(email: ["me@mail.com"])
+clara = User.all.reject { |u| u.email == 'me@mail.com' }.sample
+carole = User.all.reject { |u| u.email == 'me@mail.com' }.sample
+
 booking = Booking.new(
   start_rent: Date.today,
   end_rent: Date.today + 1.days,
-  message: "Je veux la voiture",
+  message: "I want to live my dream!",
   car_id: kev_car.id,
   user_id: nid.id
 )
+
+booking1 = Booking.new(
+  start_rent: Date.today + 10.days,
+  end_rent: Date.today + 18.days,
+  message: "Gimme that car! 😠",
+  car_id: kev_car.id,
+  user_id: ruzan.id
+)
+
+booking2 = Booking.new(
+  start_rent: Date.today + 10.days,
+  end_rent: Date.today + 18.days,
+  message: "This is a life or death situation!",
+  car_id: kev_car.id,
+  user_id: clara.id
+)
+
+booking3 = Booking.new(
+  start_rent: Date.today + 5.days,
+  end_rent: Date.today + 7.days,
+  message: "My wife wants it so please accept! 👀",
+  car_id: kev_car.id,
+  user_id: carole.id
+)
+
 booking.save!
+booking1.save!
+booking2.save!
+booking3.save!
+
 
 puts 'Finished!'
