@@ -55,6 +55,10 @@
   display: inline;
 }
 
+.card-trip-infos-top h2{
+  width: 250px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -81,16 +85,17 @@ h1{
 }
 
 .cards-index{
-  background-color: white;
+  background-color: #E7E6D2;
   display: grid;
   flex-grow: 1;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
   width: 60%;
 }
 
 #the-map {
+  border: solid 2px ;
   height: 100vh;
   position: sticky;
   top: 0;
@@ -101,3 +106,6 @@ h1{
   text-align: justify;
 }
 
+#card-index a:hover{
+  color: black;
+}

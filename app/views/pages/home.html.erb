@@ -18,8 +18,10 @@
       <%= cl_image_tag car.photo.key, class:"card-img-top", alt:"car" %>
         <div class="card-trip-infos">
           <div class="card-trip-infos-top">
-            <h2><%=car.brand_name + ' ' + car.model%></h2>
             <div>
+            <h2><%=car.brand_name%></h2>
+            </div>
+            <div class="justify-content-end">
               <ul>
                 <li><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i><i class="fa-solid fa-star mt-3"></i></li>
               </ul>
