@@ -6,13 +6,18 @@
     <div class="col-4">
       <div>
         <h2>Your cars</h2>
-          <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-            <div class="card-product-infos">
-              <h2>Car 1</h2>
-              <p>Product description with <strong>relevant info</strong> only.</p>
+          <% @cars.each do |car| %>
+            <div class="card-product">
+              <%= cl_image_tag car.photo.key, class:"car-photo"%>
+              <div class="card-product-infos">
+                <h2>
+                  <%= car.brand_name %>
+                </h2>
+                <%= car.overview %>
+                <p>Product description with <strong>relevant info</strong> only.</p>
+              </div>
             </div>
-          </div>
+          <% end %>
 
           <!-- Button trigger modal -->
           <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -56,32 +61,38 @@
       <div>
           <h2>Your bookings</h2>
 
-            <h6 class="title">Pending</h6>
+            <h6 class="title ms-3" >Pending</h6>
             <% @current_bookings.each do |booking| %>
               <%= render 'cars/car_card', car: booking.car, booking: booking %>
             <% end %>
 
 
-            <h6 class="title">Coming</h6>
+            <h6 class="title1 ms-3">Coming</h6>
             <% @future_bookings.each do |booking| %>
               <%= render 'cars/car_card', car: booking.car, booking: booking %>
             <% end %>
 
 
-             <h6 class="title">Past</h6>
+             <h6 class="title2 ms-3">Past</h6>
              <% @past_bookings.each do |booking| %>
                     <%= render 'cars/car_card', car: booking.car, booking: booking %>
              <% end %>
         </div>
     </div>
+    <% console %>
 
     <div class="col-4" >
 
       <h2>Your requests</h2>
-      <% @current_requests.each do |request| %>
+      <% @pending_requests.each do |request| %>
         <%= render 'requests', request: request %>
       <% end %>
-
+      <% @accepted_requests.each do |request| %>
+        <%= render 'requests', request: request %>
+      <% end %>
+      <% @declined_requests.each do |request| %>
+        <%= render 'requests', request: request %>
+      <% end %>
       </div>
     </div>
   </div>

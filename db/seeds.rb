@@ -117,13 +117,29 @@ cars = []
   car.save!
   i += 1
   cars << car
+  puts "one more car"
 end
 
-
+puts "cars created"
 
 # cars.each do |car|
 #  new_car = Car.new(car)
 #  new_car.save!
 # end
+
+kev = User.new(email: "me@mail.com", password: "123456", name: "Kev", phone_number: "0123456789")
+kev.save!
+kev_car = Car.last
+kev_car.user = kev
+kev_car.save!
+nid = User.first
+booking = Booking.new(
+  start_rent: Date.today,
+  end_rent: Date.today + 1.days,
+  message: "Je veux la voiture",
+  car_id: kev_car.id,
+  user_id: nid.id
+)
+booking.save!
 
 puts 'Finished!'
