@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.car = Car.find(params[:car_id])
     @booking.user = current_user
     if @booking.save
-      flash.alert = "Your booking ok"
+      flash.alert = "Your booking is ok!"
       redirect_to dashboards_path
     else
       render :new, status: :unprocessable_entity
