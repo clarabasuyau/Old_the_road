@@ -27,7 +27,7 @@
 }
 
 .card-trip-infos a:hover {
-  color: #E67E23;
+  color: #224751;
 }
 
 .card-trip-infos a {
@@ -107,6 +107,18 @@ h1{
   text-align: justify;
 }
 
-#card-index a:hover{
-  color: black;
+
+.form .btn{
+  background-color: #E67E23;
+  border: #E67E23;
+}
+
+// .form .btn{
+//   background-color: #224751;
+//   border: #224751;
+// }
+
+.description {
+  font-weight: bold;
+  font-size: large;
 }
